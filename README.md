@@ -1,4 +1,4 @@
-# Idiff.js
+# idiff
 
 A simple diff command-line tool to check for differences between two strings.
 
