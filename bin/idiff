@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+const program = require('commander')
+const process = require('process')
+const jsdiff = require('diff')
+const chalk = require('chalk')
+
+const removedWord = chalk.bgRgb(253, 182, 187)
+const addedWord = chalk.bgRgb(154, 240, 153)
+const black = chalk.black
+const bgRed = chalk.bgRgb(253, 232, 233)
+const bgGreen = chalk.bgRgb(222, 254, 222)
+const outputType = {
+  ADDED: 'ADDED',
+  REMOVED: 'REMOVED'
+}
+
+let firstValue
+let secondValue
+
+program
+  .version(require('../package.json').version)
+  .arguments('<firstValue> <secondValue>')
+  .action(function (one, two) {
+    firstValue = one
+    secondValue = two
+  })
+
+program.on('--help', function(){
+  console.log('')
+  console.log('Examples:');
+  console.log('  $ idiff "hello world" "helo world"');
+  console.log('')
+});
+
+program.parse(process.argv)
+
+if (typeof firstValue === 'undefined') {
+  console.error('no value given!')
+  process.exit(1)
+}
+
+function output (type) {
+  return function (previous, current, index, array) {
+    let color
+    if (type === outputType.ADDED) {
+      color = current.added ? addedWord : bgGreen
+    } else {
+      color = current.removed ? removedWord : bgRed
+    }
+
+    if (type === outputType.ADDED) {
+      if (current.removed) {
+        return previous
+      }
+      return previous + color(black(current.value))
+    } else {
+      if (current.added) {
+        return previous
+      }
+      return previous + color(black(current.value))
+    }
+  }
+}
+
+const result = jsdiff.diffChars(firstValue, secondValue)
+const removeOutput = bgRed(black('- ') + result.reduce(output(outputType.REMOVED), ''))
+const addOutput = bgGreen(black('+ ') + result.reduce(output(outputType.ADDED), ''))
+
+console.log(`
+  ${removeOutput}
+  ${addOutput}
+`)

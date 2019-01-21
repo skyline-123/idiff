@@ -1,0 +1,26 @@
+{
+  "name": "idiff",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "idiff": "./bin/idiff"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "standard": "standard ./bin/*",
+    "standard:fix": "standard --fix ./bin/*"
+  },
+  "keywords": [
+    "cli",
+    "diff"
+  ],
+  "author": "skyline-123",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
