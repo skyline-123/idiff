@@ -16,6 +16,10 @@
     "diff"
   ],
   "author": "skyline-123",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/skyline-123/idiff.git"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
