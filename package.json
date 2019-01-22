@@ -1,6 +1,6 @@
 {
   "name": "idiff",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple diff command-line tool to check for differences between two strings.",
   "bin": {
     "idiff": "./bin/idiff"
