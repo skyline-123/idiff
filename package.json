@@ -1,6 +1,6 @@
 {
   "name": "idiff",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin": {
     "idiff": "./bin/idiff"
@@ -15,9 +15,9 @@
     "diff"
   ],
   "author": "skyline-123",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/skyline-123/idiff.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyline-123/idiff.git"
   },
   "license": "MIT",
   "dependencies": {
