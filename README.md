@@ -1,4 +1,5 @@
 # idiff
+[![Build Status](https://travis-ci.com/skyline-123/idiff.svg?branch=master)](https://travis-ci.com/skyline-123/idiff)
 
 A simple diff command-line tool to check for differences between two strings.
 
