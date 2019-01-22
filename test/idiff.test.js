@@ -9,7 +9,7 @@ const {
   bgGreen
 } = require('../lib/output')
 
-test('diff "123" && "122", () => {
+test('diff "123" && "122"', () => {
   const diffResult = getDiffResult('123', '122')
   const removeOutput = getRemoveOutput(diffResult)
   const addOutput = getAddOutput(diffResult)
@@ -22,7 +22,7 @@ test('diff "hello world" and "helo world"', () => {
   const removeOutput = getRemoveOutput(diffResult)
   const addOutput = getAddOutput(diffResult)
   expect(addOutput).toBe(bgGreen(black('+ ') + black('hel') + black('o world')))
-  expect(removeOutput).toBe(bgRed(black('- ') + black('hel') + removedWord(black('l') + black(' world'))))
+  expect(removeOutput).toBe(bgRed(black('- ') + black('hel') + removedWord(black('l')) + black('o world')))
 })
 
 test('diff "helo world" and "hello world"', () => {
@@ -30,5 +30,5 @@ test('diff "helo world" and "hello world"', () => {
   const removeOutput = getRemoveOutput(diffResult)
   const addOutput = getAddOutput(diffResult)
   expect(addOutput).toBe(bgGreen(black('+ ') + black('hel') + black('o world')))
-  expect(removeOutput).toBe(bgRed(black('- ') + black('hel') + removedWord(black('l') + black(' world'))))
+  expect(removeOutput).toBe(bgRed(black('- ') + black('hel') + removedWord(black('l')) + black('o world')))
 })
