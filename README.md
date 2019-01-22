@@ -1,7 +1,8 @@
 # idiff
 [![Build Status](https://travis-ci.com/skyline-123/idiff.svg?branch=master)](https://travis-ci.com/skyline-123/idiff)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-lightgreen.svg)](https://standardjs.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-lightgreen.svg)](https://opensource.org/licenses/MIT)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/npm/dm/idiff.svg)](https://www.npmjs.com/package/idiff)
 
 A simple diff command-line tool to check for differences between two strings.
 
